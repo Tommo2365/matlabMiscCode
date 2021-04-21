@@ -45,7 +45,10 @@ hold on
   text(9.84644694625026e-07, 5249.9120581203,'2000K','fontSize',14)
   text(3.49149022547199e-07, 1106511.77210034,'5778K','fontSize',14)
   text(1.95431530978723e-07, 15374915.9138191,'10000K','fontSize',14)
-  
+  text('\sin\left(\pi \,x\right)')
+  syms x phi
+  cha = latex(sin(pi*x))
+  %text(latex(sin(pi*x)))
   loglog(lamMax,E1_Max,'--r','linewidth',2);
   legend('u(\lambda, T) = ((8\pihc)/\lambda^5)*(1/(exp(hc/\lambdak_BT))-1)', 'Wiens Law, \lambda_M_a_x = b/T ')
   %ylim([10^-8 10^-3]);
