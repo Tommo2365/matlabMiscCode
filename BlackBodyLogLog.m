@@ -32,7 +32,10 @@ hold on
   title('Blackbody Radiation','fontsize',14)
   xlim([10^-8 10^-3]);      %0.03*10^-6
   ylim([10^-3 10^9]);
-  %xticks([0.1 1 10 100]);
+  xticks([10^-8 10^-7 10^-6 10^-5 10^-4 10^-3])
+  xticklabels({'0.01', '0.1', '1', '10', '100', '1000'});
+  yticks([10^-2 10^0 10^2 10^4 10^6 10^8]);
+  yticklabels({'10^-^2', '1', '10^2', '10^4', '10^6', '10^8'});
   fh = figure(1);
   set(fh, 'color', 'white');
   grid on
