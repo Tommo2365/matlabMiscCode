@@ -28,7 +28,7 @@ E1_Max(:,i) = max(E1(:,i));
 loglog(lam,E1(:,i),'linewidth',2)
 hold on
   xlabel('\lambda [\mum]','fontsize',14)
-  ylabel('Spectral Radience [JÂ·\mum^{-1}Â· m^{-3}]','fontsize',14)
+  ylabel('Spectral Radience [W · \mum^{-1} · m^{-2}]','fontsize',14)
   title('Blackbody Radiation','fontsize',14)
   xlim([10^-8 10^-3]);      %0.03*10^-6
   ylim([10^-3 10^9]);
@@ -53,7 +53,7 @@ hold on
   legend('u(\lambda, T) = ((8\pihc)/\lambda^5)*(1/(exp(hc/\lambdak_BT))-1)', 'Wiens Law, \lambda_M_a_x = b/T ')
   %ylim([10^-8 10^-3]);
   %ylabel('y / {\it units}');                              
-
+ hold ons 
   
 end
 
