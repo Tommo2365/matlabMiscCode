@@ -14,6 +14,7 @@ h = 6.62607004*10.^-34; % Planck constant
 k = 1.38064852*10.^-23; % Boltzmann constant
 T = [150 300 500 1000 2000 5778 10000]; % Temperatures in Kelvin
 lam = (0:0.01:10000).*1e-6; 
+K = sprintf('K');
 
 figure(1)
 for  i= 1:7
@@ -40,20 +41,26 @@ hold on
   set(fh, 'color', 'white');
   grid on
   
-  
-  text(1.31009696724079e-05, 0.0162361703317981,'150K','fontSize',14)
-  text(7.05436980890024e-06, 0.482462658818434,'300K','fontSize',14)
-  text(3.98040708189395e-06, 5.41911294016657,'500K','fontSize',14)
-  text(1.96949548691914e-06, 172.22510878237,'1000K','fontSize',14)
-  text(9.84644694625026e-07, 5249.9120581203,'2000K','fontSize',14)
-  text(3.49149022547199e-07, 1106511.77210034,'5778K','fontSize',14)
-  text(1.95431530978723e-07, 15374915.9138191,'10000K','fontSize',14)
-  text('\sin\left(\pi \,x\right)')
-  syms x phi
-  cha = latex(sin(pi*x))
-  %text(latex(sin(pi*x)))
+  %-------------------- Plot straigth line through peaks------------------%
   loglog(lamMax,E1_Max,'--r','linewidth',2);
-  legend('u(\lambda, T) = ((8\pihc)/\lambda^5)*(1/(exp(hc/\lambdak_BT))-1)', 'Wiens Law, \lambda_M_a_x = b/T ')
+  legend('', 'Wiens Law, \lambda_M_a_x = b/T ')
+  
+  %-------------------- Apply Text------------------%
+ 
+  %tempText = num2str(T(:,i))
+  
+  text(1.31009696724079e-05, 0.0162361703317981,'100K' ,'fontSize',14);
+  text(7.05436980890024e-06, 0.482462658818434,'300K','fontSize',14);
+  text(3.98040708189395e-06, 5.41911294016657,'500K','fontSize',14);
+  text(1.96949548691914e-06, 172.22510878237,'1000K','fontSize',14);
+  text(9.84644694625026e-07, 5249.9120581203,'2000K','fontSize',14);
+  text(3.49149022547199e-07, 1106511.77210034,'5778K','fontSize',14);
+  text(1.95431530978723e-07, 15374915.9138191,'10000K','fontSize',14);
+  
+  %syms x phi
+  %text(3.49149022547199e-07, 1106511.77210034,'\sin\left(\pi \,x\right)')
+  %cha = latex(sin(pi*x))
+  %text(latex(sin(pi*x)))
   %ylim([10^-8 10^-3]);
   %ylabel('y / {\it units}');                              
 
