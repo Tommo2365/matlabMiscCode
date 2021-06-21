@@ -29,7 +29,7 @@ E1_Max(:,i) = max(E1(:,i));
 loglog(lam,E1(:,i),'linewidth',2)
 hold on
   xlabel('\lambda [\mum]','fontsize',14)
-  ylabel('Spectral Radience [J·\mum^{-1}· m^{-3}]','fontsize',14)
+  ylabel('I(\lambda, T) [W·m^{-2}· nm^{-1}]','fontsize',14)
   title('Blackbody Radiation','fontsize',14)
   xlim([10^-8 10^-3]);      %0.03*10^-6
   ylim([10^-3 10^9]);
@@ -43,7 +43,7 @@ hold on
   
   %-------------------- Plot straigth line through peaks------------------%
   loglog(lamMax,E1_Max,'--r','linewidth',2);
-  legend('', 'Wiens Law, \lambda_M_a_x = b/T ')
+  legend('Blackbody Radiation Curves', 'Wiens Law, \lambda_M_a_x = b/T ','5778K - Temperature of The Sun')
   
   %-------------------- Apply Text------------------%
  
