@@ -12,14 +12,12 @@ b = 2.89777196*10^-3;   % Constant of proportionality
 c = 2.99792458*10^8;    % Speed of light in vaccum
 h = 6.62607004*10.^-34; % Planck constant 
 k = 1.38064852*10.^-23; % Boltzmann constant
-T = [150 300 500 1000 2000 5778 10000]; % Temperatures in Kelvin
+T = [100 300 500 1000 2000 5778 10000]; % Temperatures in Kelvin
 lam = (0:0.01:10000).*1e-6; 
 K = sprintf('K');
 
 %----------------------------------- Visbale spectum -------------------------------------------------------%
-visable = [0.38 0.450 0.495 0.570 0.590 620]
-limit = [10^10 10^10 10^10 10^10 10^10 10^10]
-
+visableSpectrum = [0.000000380 0.000000450 0.000000495 0.000000570 0.000000590 0.000000620];
 
 figure(1)
 for  i= 1:7
@@ -27,7 +25,6 @@ for  i= 1:7
 
 E1(:,i) = ((8*pi*h*c)./(lam.^5)).*(1./((exp((h*c)./(lam*k.*T(i))-1))));
 
-%E1(:,i)= ((2*h*c*c)./(lam.^5)).*(exp(-(h*c)./(lam*k*T(i))));
 %E1(:,i)=(2*h*c*c)./((lam.^5).*(exp((h.*c)./(k.*T(i).*lam))-1));
 %E1(:,i) = (2*pi*h*c^2) ./ (lam.^5 .* (exp((h*c)./lam*k.*T(i))-1));
 %E1(:,i) = (((2*pi*h*c.^2)./(lam.^5)).*(1./(exp((h*c)./(lam*k.*T(i)))-1)));
@@ -77,8 +74,11 @@ hold on
   %ylabel('y / {\it units}');
   hold on
   
-  ([visable(1),limit(1)])
+    for j = 1:6
+    xline(visableSpectrum(1:6:6,j))
+    hold on
+    end
 
-  
 end
+
 
